@@ -1,0 +1,5 @@
+/vendor/
+composer.lock
+/get.php
+/post.php
+.idea
