@@ -1,15 +1,18 @@
 <?php
 
-require __DIR__."/../vendor/autoload.php";
-$curl=new \Curl\Curl();
+require __DIR__ . "/../vendor/autoload.php";
+use \Curl\Curl;
 
-$url='http://localhost/php_curl/get.php';
-$cc=array(
-    'b'=>"呵呵地点",
-    'a'=>2
-);
+$curl = new Curl();
+
+$url='http://localhost/php_curl/example/returnget.php';
 $data=array(
-    'json'=>json_encode($cc,JSON_UNESCAPED_UNICODE)
+    'b'=>"get",
+    'a'=>1,
+    'c'=>"中文测试"
 );
-$getData=$curl->get($url);
+$curl->setHeader('Accept','text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8');
+$curl->setHeader('Accept-Encoding','gzip, deflate, sdch');
+$getData=$curl->get($url,$data);
 echo $getData;
+
