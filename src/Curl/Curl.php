@@ -76,7 +76,7 @@ class Curl
     {
         $this->setUrl($url);
         $this->setOpt(CURLOPT_POST, true);
-        $this->setOpt(CURLOPT_POSTFIELDS, true);
+        $this->setOpt(CURLOPT_POSTFIELDS, $data);
         return $this->exec();
     }
 

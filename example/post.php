@@ -4,7 +4,7 @@ require __DIR__ . "/../vendor/autoload.php";
 use \Curl\Curl;
 
 $curl = new Curl();
-$url = 'localhost/php_curl/example/returnpost.php';
+$url = 'http://localhost/php_curl/example/returnpost.php';
 $data = array(
     'b' => "post",
     'a' => 2,
