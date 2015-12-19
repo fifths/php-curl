@@ -31,6 +31,7 @@ class Curl
     public $httpStatusCode = 0;
     public $httpErrorMessage = null;
 
+    private $cookies = array();
     private $headers = array();
     private $options = array();
 
@@ -116,6 +117,16 @@ class Curl
         return curl_setopt($this->curl, $option, $value);
     }
 
+    public function setHeader($key, $value)
+    {
+        $this->headers[$key] = $value;
+        $headers = array();
+        foreach ($this->headers as $key => $value) {
+            $headers[] = $key . ': ' . $value;
+        }
+        $this->setOpt(CURLOPT_HTTPHEADER, $headers);
+    }
+
     public function setUserAgent($user_agent)
     {
         $this->setOpt(CURLOPT_USERAGENT, $user_agent);
@@ -126,14 +137,23 @@ class Curl
         $this->setOpt(CURLOPT_TIMEOUT, $seconds);
     }
 
-    public function setHeader($key, $value)
+    public function setConnectTimeout($seconds)
     {
-        $this->headers[$key] = $value;
-        $headers = array();
-        foreach ($this->headers as $key => $value) {
-            $headers[] = $key . ': ' . $value;
-        }
-        $this->setOpt(CURLOPT_HTTPHEADER, $headers);
+        $this->setOpt(CURLOPT_CONNECTTIMEOUT, $seconds);
+    }
+
+    public function setCookie($key, $value){
+        //$this->setOpt(CURLOPT_COOKIE,);
+    }
+
+    public function setCookieFile($cookie_file)
+    {
+        $this->setOpt(CURLOPT_COOKIEFILE, $cookie_file);
+    }
+
+    public function setCookieJar($cookie_jar)
+    {
+        $this->setOpt(CURLOPT_COOKIEJAR, $cookie_jar);
     }
 
     private function exec()
