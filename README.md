@@ -43,6 +43,7 @@ $curl = new Curl();
 $curl->setUserAgent('');
 $curl->setHeader('X-Requested-With', 'XMLHttpRequest');
 $curl->setOpt(CURLOPT_SSL_VERIFYPEER, false);
+$curl->setCookie('key', 'value');
 $curl->get('http://www.example.com/');
 
 if ($curl->error) {
