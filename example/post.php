@@ -10,5 +10,7 @@ $data = array(
     'a' => 2,
     'c' => "中文测试"
 );
+$curl->setCookie('test1','1');
+$curl->setCookie('test2','2');
 $getData = $curl->post($url, $data);
 echo $getData;

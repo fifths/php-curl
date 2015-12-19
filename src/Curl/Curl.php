@@ -31,7 +31,7 @@ class Curl
     public $httpStatusCode = 0;
     public $httpErrorMessage = null;
 
-    private $cookies = array();
+    public $cookies = array();
     private $headers = array();
     private $options = array();
 
@@ -143,7 +143,12 @@ class Curl
     }
 
     public function setCookie($key, $value){
-        //$this->setOpt(CURLOPT_COOKIE,);
+        $this->cookies[$key]=$value;
+        $cookies=null;
+        foreach($this->cookies as $k=>$v){
+            $cookies.=$k.'='.$v.'; ';
+        }
+        $this->setOpt(CURLOPT_COOKIE,$cookies);
     }
 
     public function setCookieFile($cookie_file)
