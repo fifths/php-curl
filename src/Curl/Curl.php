@@ -161,6 +161,11 @@ class Curl
         $this->setOpt(CURLOPT_COOKIEJAR, $cookie_jar);
     }
 
+    public function setReferer($referer)
+    {
+        $this->setOpt(CURLOPT_REFERER, $referer);
+    }
+
     private function exec()
     {
         $this->response = curl_exec($this->curl);

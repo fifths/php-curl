@@ -40,6 +40,7 @@ print_r($curl->download($url, $filename));
 
 ```
 $curl = new Curl();
+$curl->setReferer('');
 $curl->setUserAgent('');
 $curl->setHeader('X-Requested-With', 'XMLHttpRequest');
 $curl->setOpt(CURLOPT_SSL_VERIFYPEER, false);
