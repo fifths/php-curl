@@ -18,14 +18,14 @@ $curl->get('http://www.example.com/');
 ```
 $curl = new Curl();
 $curl->get('http://www.example.com/search', array(
-        'q' => 'keyword',
+        'key' => 'keyword',
 ));
 ```
 
 ```
 $curl = new Curl();
 $curl->post('http://www.example.com/login/', array(
-    'username' => 'nickname',
+    'username' => 'test',
     'password' => '123456',
 ));
 ```
