@@ -80,6 +80,22 @@ class Curl
         return $this->exec();
     }
 
+    public function put($url, $data = array())
+    {
+        $this->setURL($url);
+        $this->setOpt(CURLOPT_CUSTOMREQUEST, 'PUT');
+        $this->setOpt(CURLOPT_POSTFIELDS, $data);
+        return $this->exec();
+    }
+
+    public function delete($url, $data = array())
+    {
+        $this->setURL($url);
+        $this->setOpt(CURLOPT_CUSTOMREQUEST, 'DELETE');
+        $this->setOpt(CURLOPT_POSTFIELDS, $data);
+        return $this->exec();
+    }
+
     /**
      * Download
      *
