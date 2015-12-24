@@ -30,6 +30,22 @@ $curl->post('http://www.example.com/login/', array(
 ));
 ```
 
+
+```
+$curl = new Curl();
+$curl->put('http://www.example.com/put', array(
+    'a' => 'a123456',
+    'b' => 'b123456',
+));
+```
+
+```
+$curl = new Curl();
+$curl->delete('http://www.example.com/delete', array(
+    'id' => '123',
+));
+```
+
 ```
 $curl = new Curl();
 
