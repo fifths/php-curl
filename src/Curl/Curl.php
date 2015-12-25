@@ -80,6 +80,11 @@ class Curl
         return $this->exec();
     }
 
+    /**
+     * @param $url
+     * @param array $data
+     * @return string
+     */
     public function put($url, $data = array())
     {
         $this->setURL($url);
@@ -88,6 +93,11 @@ class Curl
         return $this->exec();
     }
 
+    /**
+     * @param $url
+     * @param array $data
+     * @return string
+     */
     public function delete($url, $data = array())
     {
         $this->setURL($url);

@@ -1,10 +1,11 @@
 # PHP Curl Class
+[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-## Installation
+### Installation
 
     composer require fifths/php_curl
 
-## Quick Start and Examples
+### Quick Start and Examples
 
 ```
 require __DIR__ . '/vendor/autoload.php';
