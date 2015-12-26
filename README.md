@@ -1,10 +1,14 @@
 # PHP Curl Class
+[![Latest Stable Version](https://poser.pugx.org/fifths/php_curl/v/stable)](https://packagist.org/packages/fifths/php_curl)
+[![Total Downloads](https://poser.pugx.org/fifths/php_curl/downloads)](https://packagist.org/packages/fifths/php_curl)
+[![Latest Unstable Version](https://poser.pugx.org/fifths/php_curl/v/unstable)](https://packagist.org/packages/fifths/php_curl)
+[![License](https://poser.pugx.org/fifths/php_curl/license)](https://packagist.org/packages/fifths/php_curl)
 
-## Installation
+### Installation
 
     composer require fifths/php_curl
 
-## Quick Start and Examples
+### Quick Start and Examples
 
 ```
 require __DIR__ . '/vendor/autoload.php';
@@ -27,6 +31,22 @@ $curl = new Curl();
 $curl->post('http://www.example.com/login/', array(
     'username' => 'test',
     'password' => '123456',
+));
+```
+
+
+```
+$curl = new Curl();
+$curl->put('http://www.example.com/put', array(
+    'a' => 'a123456',
+    'b' => 'b123456',
+));
+```
+
+```
+$curl = new Curl();
+$curl->delete('http://www.example.com/delete', array(
+    'id' => '123',
 ));
 ```
 
