@@ -80,6 +80,11 @@ class Curl
         return $this->exec();
     }
 
+    /**
+     * @param $url
+     * @param array $data
+     * @return string
+     */
     public function put($url, $data = array())
     {
         $this->setURL($url);
@@ -88,6 +93,11 @@ class Curl
         return $this->exec();
     }
 
+    /**
+     * @param $url
+     * @param array $data
+     * @return string
+     */
     public function delete($url, $data = array())
     {
         $this->setURL($url);
@@ -115,12 +125,23 @@ class Curl
         return false;
     }
 
+    /**
+     * setUrl
+     * @param string $url
+     * @param array $data
+     */
     private function setUrl($url = '', $data = array())
     {
         $this->url = $url . (empty($data) ? '' : '?' . http_build_query($data));
         curl_setopt($this->curl, CURLOPT_URL, $this->url);
     }
 
+    /**
+     * setOpt
+     * @param $option
+     * @param $value
+     * @return bool
+     */
     public function setOpt($option, $value)
     {
         $required_options = array(
@@ -226,6 +247,9 @@ class Curl
         }
     }
 
+    /**
+     * destruct
+     */
     public function __destruct()
     {
         $this->close();
