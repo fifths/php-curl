@@ -154,6 +154,11 @@ class Curl
         return curl_setopt($this->curl, $option, $value);
     }
 
+    public function setPort($port)
+    {
+        $this->setOpt(CURLOPT_PORT, intval($port));
+    }
+
     public function setHeader($key, $value)
     {
         $this->headers[$key] = $value;
@@ -203,6 +208,10 @@ class Curl
         $this->setOpt(CURLOPT_REFERER, $referer);
     }
 
+    /**
+     * exec
+     * @return mixed|null
+     */
     private function exec()
     {
         $this->response = curl_exec($this->curl);
@@ -240,6 +249,9 @@ class Curl
         return $response_header_array;
     }
 
+    /**
+     * close
+     */
     public function close()
     {
         if (is_resource($this->curl)) {
