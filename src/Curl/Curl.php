@@ -47,6 +47,12 @@ class Curl
         $this->setOpt(CURLOPT_HEADERFUNCTION, array($this, 'headerCallback'));
     }
 
+    /**
+     * headerCallback
+     * @param $ch
+     * @param $header
+     * @return int
+     */
     public function headerCallback($ch, $header)
     {
         if (preg_match('/^Set-Cookie:\s*([^=]+)=([^;]+)/mi', $header, $cookie) == 1) {
