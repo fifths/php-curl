@@ -74,6 +74,7 @@ class Curl
     }
 
     /**
+     * post
      * @param $url
      * @param array $data
      * @return string
@@ -87,6 +88,7 @@ class Curl
     }
 
     /**
+     * put
      * @param $url
      * @param array $data
      * @return string
@@ -100,6 +102,7 @@ class Curl
     }
 
     /**
+     * delete
      * @param $url
      * @param array $data
      * @return string
@@ -108,6 +111,48 @@ class Curl
     {
         $this->setURL($url);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'DELETE');
+        $this->setOpt(CURLOPT_POSTFIELDS, $data);
+        return $this->exec();
+    }
+
+    /**
+     * head
+     * @param $url
+     * @param array $data
+     * @return mixed|null
+     */
+    public function head($url, $data = array())
+    {
+        $this->setURL($url, $data);
+        $this->setOpt(CURLOPT_CUSTOMREQUEST, 'HEAD');
+        $this->setOpt(CURLOPT_NOBODY, true);
+        return $this->exec();
+    }
+
+
+    /**
+     * options
+     * @param $url
+     * @param array $data
+     * @return mixed|null
+     */
+    public function options($url, $data = array())
+    {
+        $this->setURL($url, $data);
+        $this->setOpt(CURLOPT_CUSTOMREQUEST, 'OPTIONS');
+        return $this->exec();
+    }
+
+    /**
+     * patch
+     * @param $url
+     * @param array $data
+     * @return mixed|null
+     */
+    public function patch($url, $data = array())
+    {
+        $this->setURL($url);
+        $this->setOpt(CURLOPT_CUSTOMREQUEST, 'PATCH');
         $this->setOpt(CURLOPT_POSTFIELDS, $data);
         return $this->exec();
     }
@@ -131,6 +176,18 @@ class Curl
         return false;
     }
 
+
+    /**
+     * buildUrl
+     * @param string $url
+     * @param array $data
+     * @return string
+     */
+    public function buildUrl($url = '', $data = array())
+    {
+        return $url . (empty($data) ? '' : '?' . http_build_query($data));
+    }
+
     /**
      * setUrl
      * @param string $url
@@ -138,7 +195,7 @@ class Curl
      */
     private function setUrl($url = '', $data = array())
     {
-        $this->url = $url . (empty($data) ? '' : '?' . http_build_query($data));
+        $this->url = $this->buildUrl($url, $data);
         curl_setopt($this->curl, CURLOPT_URL, $this->url);
     }
 
@@ -190,13 +247,14 @@ class Curl
         $this->setOpt(CURLOPT_CONNECTTIMEOUT, $seconds);
     }
 
-    public function setCookie($key, $value){
-        $this->cookies[$key]=$value;
-        $cookies=null;
-        foreach($this->cookies as $k=>$v){
-            $cookies.=$k.'='.$v.'; ';
+    public function setCookie($key, $value)
+    {
+        $this->cookies[$key] = $value;
+        $cookies = null;
+        foreach ($this->cookies as $k => $v) {
+            $cookies .= $k . '=' . $v . '; ';
         }
-        $this->setOpt(CURLOPT_COOKIE,$cookies);
+        $this->setOpt(CURLOPT_COOKIE, $cookies);
     }
 
     public function setCookieFile($cookie_file)
