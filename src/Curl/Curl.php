@@ -217,11 +217,20 @@ class Curl
         return curl_setopt($this->curl, $option, $value);
     }
 
+    /**
+     * setPort
+     * @param $port
+     */
     public function setPort($port)
     {
         $this->setOpt(CURLOPT_PORT, intval($port));
     }
 
+    /**
+     * setHeader
+     * @param $key
+     * @param $value
+     */
     public function setHeader($key, $value)
     {
         $this->headers[$key] = $value;
@@ -232,21 +241,38 @@ class Curl
         $this->setOpt(CURLOPT_HTTPHEADER, $headers);
     }
 
+    /**
+     * setUserAgent
+     * @param $user_agent
+     */
     public function setUserAgent($user_agent)
     {
         $this->setOpt(CURLOPT_USERAGENT, $user_agent);
     }
 
+    /**
+     * setTimeout
+     * @param $seconds
+     */
     public function setTimeout($seconds)
     {
         $this->setOpt(CURLOPT_TIMEOUT, $seconds);
     }
 
+    /**
+     * setConnectTimeout
+     * @param $seconds
+     */
     public function setConnectTimeout($seconds)
     {
         $this->setOpt(CURLOPT_CONNECTTIMEOUT, $seconds);
     }
 
+    /**
+     * setCookie
+     * @param $key
+     * @param $value
+     */
     public function setCookie($key, $value)
     {
         $this->cookies[$key] = $value;
@@ -257,16 +283,28 @@ class Curl
         $this->setOpt(CURLOPT_COOKIE, $cookies);
     }
 
+    /**
+     * setCookieFile
+     * @param $cookie_file
+     */
     public function setCookieFile($cookie_file)
     {
         $this->setOpt(CURLOPT_COOKIEFILE, $cookie_file);
     }
 
+    /**
+     * setCookieJar
+     * @param $cookie_jar
+     */
     public function setCookieJar($cookie_jar)
     {
         $this->setOpt(CURLOPT_COOKIEJAR, $cookie_jar);
     }
 
+    /**
+     * setReferer
+     * @param $referer
+     */
     public function setReferer($referer)
     {
         $this->setOpt(CURLOPT_REFERER, $referer);
