@@ -70,6 +70,8 @@ class Curl
     public function get($url, $data = array())
     {
         $this->setUrl($url, $data);
+        $this->setOpt(CURLOPT_CUSTOMREQUEST, 'GET');
+        $this->setOpt(CURLOPT_HTTPGET, true);
         return $this->exec();
     }
 
@@ -83,6 +85,7 @@ class Curl
     {
         $this->setUrl($url);
         $this->setOpt(CURLOPT_POST, true);
+        $this->setOpt(CURLOPT_CUSTOMREQUEST, 'POST');
         $this->setOpt(CURLOPT_POSTFIELDS, $data);
         return $this->exec();
     }
