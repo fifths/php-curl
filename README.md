@@ -61,6 +61,7 @@ print_r($curl->download($url, $filename));
 
 ```
 $curl = new Curl();
+$curl->setBasicAuthentication('username', 'password');
 $curl->setReferer('');
 $curl->setUserAgent('');
 $curl->setHeader('X-Requested-With', 'XMLHttpRequest');

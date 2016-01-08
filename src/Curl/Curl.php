@@ -63,6 +63,17 @@ class Curl
     }
 
     /**
+     * setBasicAuthentication
+     * @param $username
+     * @param string $password
+     */
+    public function setBasicAuthentication($username, $password = '')
+    {
+        $this->setOpt(CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        $this->setOpt(CURLOPT_USERPWD, $username . ':' . $password);
+    }
+
+    /**
      * @param $url
      * @param array $data
      * @return string
