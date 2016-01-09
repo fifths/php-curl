@@ -11,6 +11,7 @@
 
 ### Quick Start and Examples
 
+#### HTTP GET
 ```
 require __DIR__ . '/vendor/autoload.php';
 
@@ -27,6 +28,7 @@ $curl->get('http://www.example.com/search', array(
 ));
 ```
 
+#### HTTP POST
 ```
 $curl = new Curl();
 $curl->post('http://www.example.com/login/', array(
@@ -36,6 +38,7 @@ $curl->post('http://www.example.com/login/', array(
 ```
 
 
+#### HTTP PUT
 ```
 $curl = new Curl();
 $curl->put('http://www.example.com/put', array(
@@ -44,6 +47,7 @@ $curl->put('http://www.example.com/put', array(
 ));
 ```
 
+#### HTTP DELETE
 ```
 $curl = new Curl();
 $curl->delete('http://www.example.com/delete', array(
@@ -51,6 +55,7 @@ $curl->delete('http://www.example.com/delete', array(
 ));
 ```
 
+#### DOWNLOAD
 ```
 $curl = new Curl();
 
