@@ -232,6 +232,17 @@ class Curl
     }
 
     /**
+     * getOpt
+     * @param $option
+     * @return mixed
+     */
+    public function getOpt($option)
+    {
+        return $this->options[$option];
+    }
+
+
+    /**
      * setPort
      * @param $port
      */
