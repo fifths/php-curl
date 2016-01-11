@@ -1,17 +1,17 @@
-# PHP Curl Class
+# PHP Curl Class(Curl 类库)
 [![Build Status](https://travis-ci.org/fifths/php_curl.svg?branch=master)](https://travis-ci.org/fifths/php_curl)
 [![Latest Stable Version](https://poser.pugx.org/fifths/php_curl/v/stable)](https://packagist.org/packages/fifths/php_curl)
 [![Total Downloads](https://poser.pugx.org/fifths/php_curl/downloads)](https://packagist.org/packages/fifths/php_curl)
 [![Latest Unstable Version](https://poser.pugx.org/fifths/php_curl/v/unstable)](https://packagist.org/packages/fifths/php_curl)
 [![License](https://poser.pugx.org/fifths/php_curl/license)](https://packagist.org/packages/fifths/php_curl)
 
-### Installation
+### Installation(安装)
 
     composer require fifths/php_curl
 
-### Quick Start and Examples
+### Quick Start and Examples(快速启动和实例)
 
-#### HTTP GET
+#### HTTP GET(请求)
 ```
 require __DIR__ . '/vendor/autoload.php';
 
@@ -28,7 +28,7 @@ $curl->get('http://www.example.com/search', array(
 ));
 ```
 
-#### HTTP POST
+#### HTTP POST(请求)
 ```
 $curl = new Curl();
 $curl->post('http://www.example.com/login/', array(
@@ -38,7 +38,7 @@ $curl->post('http://www.example.com/login/', array(
 ```
 
 
-#### HTTP PUT
+#### HTTP PUT(请求)
 ```
 $curl = new Curl();
 $curl->put('http://www.example.com/put', array(
@@ -47,7 +47,7 @@ $curl->put('http://www.example.com/put', array(
 ));
 ```
 
-#### HTTP DELETE
+#### HTTP DELETE(请求)
 ```
 $curl = new Curl();
 $curl->delete('http://www.example.com/delete', array(
@@ -55,7 +55,7 @@ $curl->delete('http://www.example.com/delete', array(
 ));
 ```
 
-#### DOWNLOAD
+#### DOWNLOAD(下载文件)
 ```
 $curl = new Curl();
 
@@ -64,6 +64,7 @@ $filename = 'example.jpg';
 print_r($curl->download($url, $filename));
 ```
 
+#### OTHER(其他)
 ```
 $curl = new Curl();
 $curl->setBasicAuthentication('username', 'password');
