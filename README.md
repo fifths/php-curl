@@ -12,7 +12,7 @@
 ### Quick Start and Examples
 
 #### HTTP GET
-```
+```php
 require __DIR__ . '/vendor/autoload.php';
 
 use \Curl\Curl;
@@ -21,7 +21,7 @@ $curl = new Curl();
 $curl->get('http://www.example.com/');
 ```
 
-```
+```php
 $curl = new Curl();
 $curl->get('http://www.example.com/search', array(
         'key' => 'keyword',
@@ -29,7 +29,7 @@ $curl->get('http://www.example.com/search', array(
 ```
 
 #### HTTP POST
-```
+```php
 $curl = new Curl();
 $curl->post('http://www.example.com/login/', array(
     'username' => 'test',
@@ -39,7 +39,7 @@ $curl->post('http://www.example.com/login/', array(
 
 
 #### HTTP PUT
-```
+```php
 $curl = new Curl();
 $curl->put('http://www.example.com/put', array(
     'a' => 'a123456',
@@ -48,7 +48,7 @@ $curl->put('http://www.example.com/put', array(
 ```
 
 #### HTTP DELETE
-```
+```php
 $curl = new Curl();
 $curl->delete('http://www.example.com/delete', array(
     'id' => '123',
@@ -56,7 +56,7 @@ $curl->delete('http://www.example.com/delete', array(
 ```
 
 #### DOWNLOAD
-```
+```php
 $curl = new Curl();
 
 $url = 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1070902365,2619384777&fm=116&gp=0.jpg';
@@ -65,7 +65,7 @@ print_r($curl->download($url, $filename));
 ```
 
 #### OTHER
-```
+```php
 $curl = new Curl();
 $curl->setBasicAuthentication('username', 'password');
 $curl->setReferer('');
