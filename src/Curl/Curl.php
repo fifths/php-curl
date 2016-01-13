@@ -367,13 +367,24 @@ class Curl
     private function parseRequestHeaders($raw_request_headers)
     {
         $request_headers_array = explode("\r\n", trim($raw_request_headers));
-        return $request_headers_array;
+        return $this->parseHeaders($request_headers_array);
     }
 
     private function parseResponseHeaders($raw_response_headers)
     {
         $response_header_array = explode("\r\n", trim($raw_response_headers));
-        return $response_header_array;
+        return $this->parseHeaders($response_header_array);
+    }
+
+    private function parseHeaders($raw_headers)
+    {
+        if (isset($raw_headers[0])) unset($raw_headers[0]);
+        $request_headers = array();
+        foreach ($raw_headers as $value) {
+            $data = explode(':', $value);
+            $request_headers[$data[0]] = $data[1];
+        }
+        return $request_headers;
     }
 
     /**

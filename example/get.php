@@ -14,5 +14,6 @@ $data=array(
 $curl->setHeader('Accept','text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8');
 $curl->setHeader('Accept-Encoding','gzip, deflate, sdch');
 $getData=$curl->get($url,$data);
+//var_dump($curl->rawResponseHeaders);
 echo $getData;
 
