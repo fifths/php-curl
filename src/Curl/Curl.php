@@ -172,7 +172,7 @@ class Curl
     }
 
     /**
-     * Download
+     * download
      *
      * @param $url
      * @param $filename
@@ -376,6 +376,11 @@ class Curl
         return $this->parseHeaders($response_header_array);
     }
 
+    /**
+     * parseHeaders
+     * @param $raw_headers
+     * @return array
+     */
     private function parseHeaders($raw_headers)
     {
         if (isset($raw_headers[0])) unset($raw_headers[0]);
