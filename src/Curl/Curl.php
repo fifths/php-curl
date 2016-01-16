@@ -32,8 +32,8 @@ class Curl
     public $httpErrorMessage = null;
 
     public $cookies = array();
-    private $headers = array();
-    private $options = array();
+    protected $headers = array();
+    protected $options = array();
 
     public function __construct()
     {
@@ -207,7 +207,7 @@ class Curl
      * @param string $url
      * @param array $data
      */
-    private function setUrl($url = '', $data = array())
+    protected function setUrl($url = '', $data = array())
     {
         $this->url = $this->buildUrl($url, $data);
         curl_setopt($this->curl, CURLOPT_URL, $this->url);
@@ -339,7 +339,7 @@ class Curl
      * exec
      * @return mixed|null
      */
-    private function exec()
+    protected function exec()
     {
         $this->response = curl_exec($this->curl);
         $this->curlErrorCode = curl_errno($this->curl);
@@ -364,12 +364,12 @@ class Curl
         return $this->response;
     }
 
-    private function parseRequestHeaders($raw_request_headers)
+    protected function parseRequestHeaders($raw_request_headers)
     {
         return $this->parseHeaders($raw_request_headers);
     }
 
-    private function parseResponseHeaders($raw_response_headers)
+    protected function parseResponseHeaders($raw_response_headers)
     {
         return $this->parseHeaders($raw_response_headers);
     }
@@ -379,7 +379,7 @@ class Curl
      * @param $raw_headers
      * @return array
      */
-    private function parseHeaders($raw_headers)
+    protected function parseHeaders($raw_headers)
     {
         $request_headers= explode("\r\n", trim($raw_headers));
         return $request_headers;
