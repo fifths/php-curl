@@ -309,6 +309,26 @@ class Curl
     }
 
     /**
+     * getCookie
+     * @param $key
+     * @return mixed
+     */
+    public function getCookie($key)
+    {
+        return $this->getResponseCookie($key);
+    }
+
+    /**
+     * getResponseCookie
+     * @param $key
+     * @return null
+     */
+    public function getResponseCookie($key)
+    {
+        return isset($this->responseCookies[$key]) ? $this->responseCookies[$key] : null;
+    }
+
+    /**
      * setCookieFile
      * @param $cookie_file
      */
