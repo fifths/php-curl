@@ -189,7 +189,7 @@ class Curl
      * @param $filename
      * @return bool
      */
-    function download($url, $filename)
+    public function download($url, $filename)
     {
         $fp = fopen($filename, "wb");
         if (is_resource($fp)) {
