@@ -191,7 +191,7 @@ class Curl
      */
     public function download($url, $filename)
     {
-        $fp = fopen($filename, "wb");
+        $fp = fopen($filename, "wb+");
         if (is_resource($fp)) {
             $this->setOpt(CURLOPT_FILE, $fp);
             $this->get($url);
