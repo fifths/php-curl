@@ -31,9 +31,9 @@ class Curl
     public $httpStatusCode = 0;
     public $httpErrorMessage = null;
 
-    public $cookies = array();
-    protected $headers = array();
-    protected $options = array();
+    private $cookies = array();
+    private $headers = array();
+    private $options = array();
 
     public function __construct()
     {
