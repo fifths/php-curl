@@ -7,7 +7,7 @@
 
 ### Installation
 
-    composer require fifths/php_curl
+    composer require fifths/php-curl
 
 ### Quick Start and Examples
 

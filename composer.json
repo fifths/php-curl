@@ -1,6 +1,6 @@
 {
-    "name": "fifths/php_curl",
-    "description": "php_curl",
+    "name": "fifths/php-curl",
+    "description": "php-curl",
     "license": "MIT",
     "authors": [
         {
