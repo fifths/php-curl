@@ -1,9 +1,9 @@
 # PHP Curl Class
-[![Build Status](https://travis-ci.org/fifths/php_curl.svg?branch=master)](https://travis-ci.org/fifths/php_curl)
-[![Latest Stable Version](https://poser.pugx.org/fifths/php_curl/v/stable)](https://packagist.org/packages/fifths/php_curl)
-[![Total Downloads](https://poser.pugx.org/fifths/php_curl/downloads)](https://packagist.org/packages/fifths/php_curl)
-[![Latest Unstable Version](https://poser.pugx.org/fifths/php_curl/v/unstable)](https://packagist.org/packages/fifths/php_curl)
-[![License](https://poser.pugx.org/fifths/php_curl/license)](https://packagist.org/packages/fifths/php_curl)
+[![Build Status](https://travis-ci.org/fifths/php-curl.svg?branch=master)](https://travis-ci.org/fifths/php-curl)
+[![Latest Stable Version](https://poser.pugx.org/fifths/php-curl/v/stable)](https://packagist.org/packages/fifths/php-curl)
+[![Total Downloads](https://poser.pugx.org/fifths/php-curl/downloads)](https://packagist.org/packages/fifths/php-curl)
+[![Latest Unstable Version](https://poser.pugx.org/fifths/php-curl/v/unstable)](https://packagist.org/packages/fifths/php-curl)
+[![License](https://poser.pugx.org/fifths/php-curl/license)](https://packagist.org/packages/fifths/php-curl)
 
 ### Installation
 
@@ -13,8 +13,6 @@
 
 #### HTTP GET
 ```php
-require __DIR__ . '/vendor/autoload.php';
-
 use \Curl\Curl;
 
 $curl = new Curl();
